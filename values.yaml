@@ -1,1 +1,2 @@
 appName: cart
+params: "prod.cart.redis_host prod.cart.catalogue_host prod.cart.catalogue_port"
