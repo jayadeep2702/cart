@@ -1,14 +1,6 @@
-FROM node:14
-
-
-EXPOSE 8080
-
-WORKDIR /opt/server
-
-COPY package.json /opt/server/
-
-RUN npm install
-
-COPY server.js /opt/server/
-
-CMD ["node", "server.js"]
+FROM        node
+RUN         mkdir /app
+WORKDIR     /app
+COPY        server.js .
+COPY        node_modules node_modules
+ENTRYPOINT  [ "node", "server.js" ]
